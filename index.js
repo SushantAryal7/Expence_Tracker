@@ -25,7 +25,7 @@ function getData(){
     deta.forEach((element, index) => {
         finallist += `<div>
         <span>${element.expense} -</span><span>${element.description} -</span><span>${element.category} -</span>
-        <button onclick = 'deleteData(${index})'>Delete Expence</button><button>Edit Expence</button>
+        <button onclick = deleteData('${index}')>Delete Expence</button><button onclick = editData('${element.expense}','${element.description}','${element.category}','${index}')>Edit Expence</button>
     </div>`
     show.innerHTML = finallist ;
     });
@@ -38,5 +38,13 @@ function deleteData(i){
     deta.splice(i,1);
     localStorage.setItem("deta",JSON.stringify(deta));
     getData();
+}
+
+function editData(expens, des, cat, ind){
+    document.querySelector('#expense').value = expens;
+    document.querySelector('#description').value = des;
+    document.querySelector('#category').value = cat;
+
+    deleteData(ind);
 }
 getData();

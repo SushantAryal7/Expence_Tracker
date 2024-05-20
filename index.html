@@ -8,13 +8,20 @@
 <body>
     <div>
         <form action="">
-            Choose expenseAmount: <input type="number" name="expense">
-            Choose description: <input type="text" name="description">
-            Choose Category:<input type="text" name="category">
+            Choose expenseAmount: <input type="number" id="expense" name="expense">
+            Choose description: <input type="text" id="description" name="description">
+            Choose Category:<select name="category" id="category">
+                <option >---Select---</option>
+                <option value="Movie">Movie</option>
+                <option value="Tour">Tour</option>
+                <option value="Electricity">Electricity</option>
+                <option value="Mobile">Mobile</option>
+            </select>
             <button>Add Expence</button>
         </form>
         <br>
         <div class="show" ></div>
+        
         
     </div>
     <script src="index.js"></script>
